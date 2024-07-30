@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.white,
         child: Column(
           children: [
-            const UserAccountsDrawerHeader(
+            UserAccountsDrawerHeader(
               accountName: Text("Dhruv Bhalani"),
               accountEmail: Text("Dhruvbhalani9@.gmail"),
               decoration: BoxDecoration(color: Colors.red),
@@ -27,11 +27,11 @@ class _HomePageState extends State<HomePage> {
                     "https://avatars.githubusercontent.com/u/156923442?s=400&u=8b2e6cf085f2185acbd956c2d57714c15f80d74e&v=4"),
               ),
             ),
-            const Text(
+            Text(
               "Clocks",
               selectionColor: Colors.black,
             ),
-            const SizedBox(
+            SizedBox(
               height: 10,
             ),
             Row(
@@ -41,6 +41,7 @@ class _HomePageState extends State<HomePage> {
                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWYzGfZUrsi8J-sPK5EwwuPUVcGGBgyBWhPQ&s"),
               ],
             ),
+            Text(""),
           ],
         ),
       ),

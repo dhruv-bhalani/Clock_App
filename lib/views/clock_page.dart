@@ -35,6 +35,75 @@ class _clockpageState extends State<clockpage> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.sizeOf(context);
     return Scaffold(
+      drawer: Drawer(
+        child: Column(
+          children: [
+            const UserAccountsDrawerHeader(
+              accountName: Text('Dhruv bhalani'),
+              accountEmail: Text('dhruvbhalani@10gmail.com'),
+              currentAccountPicture: CircleAvatar(
+                foregroundImage: NetworkImage(
+                    "https://avatars.githubusercontent.com/u/156923442?v=4"),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Analog Dial',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  ),
+                  Switch(
+                      value: _isAnalog,
+                      onChanged: (val) {
+                        if ((!val) && _isAnalog) {
+                          _isStrap = true;
+                          _isAnalog = val;
+                        } else {
+                          _isStrap = false;
+                          _isAnalog = val;
+                        }
+                        setState(() {});
+                      }),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'Strap Dial',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                  ),
+                  Switch(
+                      value: _isStrap,
+                      onChanged: (val) {
+                        if ((!val) && _isStrap) {
+                          _isAnalog = true;
+                          _isStrap = val;
+                        } else {
+                          _isAnalog = false;
+                          _isStrap = val;
+                        }
+
+                        setState(() {});
+                      }),
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
       appBar: AppBar(
         title: const Text("Clock Page"),
         actions: [
